@@ -66,7 +66,7 @@ export const PROS =
         }
     ]
     },{
-        id: 1,
+        id: 2,
         name:'This app',
         image: 'assets/images/basshorizontal.png',
         description:'My first react app',
