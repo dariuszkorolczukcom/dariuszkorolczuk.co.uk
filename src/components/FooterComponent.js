@@ -10,20 +10,20 @@ function Footer(props) {
                     <h5>Links</h5>
                     <ul className="list-unstyled">
                     <li><Link to='/home'>Home</Link></li>
-                        <li><Link to='/aboutme'>About</Link></li>
+                        <li><Link to='/about'>About</Link></li>
                         <li><Link to='/projects'>Projects</Link></li>
                         <li><Link to='/contactme'>Contact</Link></li>
                     </ul>
                 </div>
                 <div className="col-7 col-sm-5">
-                    <h5>Our Address</h5>
+                    <h5>My Address</h5>
                     <address>
 		              Swinton<br />
 		              Manchester<br />
 		              United Kingdom<br />
 		              <i className="fa fa-phone fa-lg"></i>: +44 7508 616 909<br />
 		              <i className="fa fa-envelope fa-lg"></i>: <a href="mailto:dkorolczuk86@gmail.com">
-                         dkorolczuk86"gmail.com</a>
+                         dkorolczuk86@gmail.com</a>
                     </address>
                 </div>
                 <div className="col-12 col-sm-4 align-self-center">

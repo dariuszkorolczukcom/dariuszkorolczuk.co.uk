@@ -12,6 +12,13 @@ class Header extends Component {
           isNavOpen: false
         };
       }
+      componentDidMount() {
+    setInterval( () => {
+      this.setState({
+        curTime : new Date().toLocaleString()
+      })
+    },1000)
+  }
 
       toggleNav() {
         this.setState({
@@ -32,7 +39,7 @@ class Header extends Component {
                                 <NavLink className="nav-link"  to='/home'><span className="fa fa-home fa-lg"></span> Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to='/aboutmu'><span className="fa fa-info fa-lg"></span> About</NavLink>
+                                <NavLink className="nav-link" to='/about'><span className="fa fa-info fa-lg"></span> About</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink className="nav-link"  to='/projects'><span className="fa fa-list fa-lg"></span> Projects</NavLink>

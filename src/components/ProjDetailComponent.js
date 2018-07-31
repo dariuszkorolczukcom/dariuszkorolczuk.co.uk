@@ -1,14 +1,9 @@
-import React, {Component} from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody,
-    CardTitle, CardLink } from 'reactstrap';
-
-    class ProjDetail extends Component {
-        constructor(props) {
-            super(props);
-                this.state = {}
-        }
+import React from 'react';
+import { Card, CardLink, CardImg, CardText, CardBody,
+    CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+    import { Link } from 'react-router-dom';
     
-    renderProj(proj) {
+    function RenderProj({proj}) {
         if (proj != null)
             return(
                 <Card>
@@ -25,33 +20,45 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody,
               <div></div>
           );
         }
-    renderComments(selectedProj) {
-        if (selectedProj != null)
+    function RenderComments({comments}) {
+        
             return(
                 <div className="col-12 col-md-5 m-1">
                 <h4>Info</h4>
-                {selectedProj.comments.map((comment) =>
+                {comments.map((comment) =>
                 <div key={comment.id}>
                 <p>{comment.comment}</p>
                 </div>
                 )}
                 </div>
             );
-            else
-          return(
-              <div></div>
-          );
+            
         }
-        render() {
-            return(
+        const ProjDetail = (props) => {
+            return (
                 <div className="container">
                 <div className="row">
-                    {this.renderProj(this.props.selectedProj)}
-                    {this.renderComments(this.props.selectedProj)}
+                    <Breadcrumb>
+
+                        <BreadcrumbItem><Link to="/projects">Projects</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>{props.proj.name}</BreadcrumbItem>
+                    </Breadcrumb>
+                    <div className="col-12">
+                        <h3>{props.proj.name}</h3>
+                        <hr />
+                    </div>                
+                </div>
+                <div className="row">
+                    <div className="col-12 col-md-5 m-1">
+                        <RenderProj proj={props.proj} />
+                    </div>
+                    <div className="col-12 col-md-5 m-1">
+                        <RenderComments comments={props.comments} />
+                    </div>
                 </div>
                 </div>
             );
         }
-    }
+    
     
     export default ProjDetail;
