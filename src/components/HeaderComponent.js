@@ -44,10 +44,15 @@ class Header extends Component {
                             
                             </Nav>
                         </Collapse>
-                        <Clock />
+                        
                     </div>
                     
                 </Navbar>
+                <div className="container">
+                        <div className="row row-header">
+                        <Clock />
+                        </div>
+                    </div>
                 <Jumbotron>
                     <div className="container">
                         <div className="row row-header">
