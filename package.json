@@ -12,7 +12,8 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-google-maps": "^9.4.5",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",

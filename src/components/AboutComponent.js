@@ -40,13 +40,15 @@ function About(props) {
                         <CardBody>
                             <dl className="row p-1">
                                 <dt className="col-6">DOB</dt>
-                                <dd className="col-6">3 Feb. 2013</dd>
-                                <dt className="col-6">Major Stake Holder</dt>
-                                <dd className="col-6">HK Fine Foods Inc.</dd>
-                                <dt className="col-6">Last Year's Turnover</dt>
-                                <dd className="col-6">$1,250,375</dd>
-                                <dt className="col-6">Employees</dt>
-                                <dd className="col-6">40</dd>
+                                <dd className="col-6">22 Aug 1986</dd>
+                                <dt className="col-6">Nationality</dt>
+                                <dd className="col-6">Polish</dd>
+                                <dt className="col-6">Residence</dt>
+                                <dd className="col-6">Manchester, UK</dd>
+                                <dt className="col-6">coding in</dt>
+                                <dd className="col-6">JS</dd>
+                                <dt className="col-6">instrument</dt>
+                                <dd className="col-6">Bass</dd>
                             </dl>
                         </CardBody>
                     </Card>
@@ -55,11 +57,11 @@ function About(props) {
                     <Card>
                         <CardBody className="bg-faded">
                             <blockquote className="blockquote">
-                                <p className="mb-0">You better cut the pizza in four pieces because
-                                    I'm not hungry enough to eat six.</p>
-                                <footer className="blockquote-footer">Yogi Berra,
-                                <cite title="Source Title">The Wit and Wisdom of Yogi Berra,
-                                    P. Pepe, Diversion Books, 2014</cite>
+                                <p className="mb-0">
+                                
+                                </p>
+                                <footer className="blockquote-footer">
+                                Yogi Berra
                                 </footer>
                             </blockquote>
                         </CardBody>
