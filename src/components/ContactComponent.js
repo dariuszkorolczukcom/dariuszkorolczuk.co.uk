@@ -1,6 +1,7 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import MapWithAMarker from './MapComponent';
 
 function Contact(props) {
     return(
@@ -30,7 +31,11 @@ function Contact(props) {
                         </address>
                 </div>
                 <div className="col-12 col-sm-6 offset-sm-1">
-                    <h5>Map of our Location</h5>
+                    <h5>
+                        <MapWithAMarker googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places" loadingElement={<div style={{ height: `100%` }} />}containerElement={<div style={{ height: `400px` }} />}
+  mapElement={<div style={{ height: `100%` }} />}
+/>
+</h5>
                 </div>
                 <div className="col-12 col-sm-11 offset-sm-1">
                     <div className="btn-group" role="group">

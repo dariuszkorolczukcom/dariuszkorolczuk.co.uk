@@ -8,6 +8,7 @@ import { CERTIFICATES } from '../shared/certificates';
 import Contact from './ContactComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
+
 import Home from './HomeComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import ProjDetail from './ProjDetailComponent';

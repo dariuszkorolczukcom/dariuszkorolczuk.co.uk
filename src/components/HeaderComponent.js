@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand,NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import Clock from './ClockComponent';
 
 class Header extends Component {
 
@@ -12,13 +13,6 @@ class Header extends Component {
           isNavOpen: false
         };
       }
-      componentDidMount() {
-    setInterval( () => {
-      this.setState({
-        curTime : new Date().toLocaleString()
-      })
-    },1000)
-  }
 
       toggleNav() {
         this.setState({
@@ -47,9 +41,12 @@ class Header extends Component {
                             <NavItem>
                                 <NavLink className="nav-link" to='/contactme'><span className="fa fa-address-card fa-lg"></span> Contact</NavLink>
                             </NavItem>
+                            
                             </Nav>
                         </Collapse>
+                        <Clock />
                     </div>
+                    
                 </Navbar>
                 <Jumbotron>
                     <div className="container">
