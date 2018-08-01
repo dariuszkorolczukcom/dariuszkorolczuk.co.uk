@@ -2,10 +2,16 @@ import React from 'react';
 import { Card, CardLink, CardImg, CardText, CardBody,
     CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
     import { Link } from 'react-router-dom';
-    
+    import { FadeTransform, Fade, Stagger } from 'react-animation-components';
+
     function RenderProj({proj}) {
         if (proj != null)
             return(
+                <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
                 <Card>
                 <CardImg src={proj.image} alt={proj.name} />
                 <CardBody>
@@ -13,6 +19,7 @@ import { Card, CardLink, CardImg, CardText, CardBody,
                   <CardText>{proj.description}</CardText>
                 </CardBody>
             </Card>
+             </FadeTransform>
             );
             else
           return(
@@ -24,15 +31,14 @@ import { Card, CardLink, CardImg, CardText, CardBody,
             return(
                 <div>
                 <h4>Info</h4>
+                <Stagger in>
                 {comments.map((comment) =>
                 <div key={comment.id}>
                 <p>{comment.comment}</p>
                 </div>
-                )}
-                </div>
-            );
-            
-        }
+                )}</Stagger></div>
+                );}
+        
         const ProjDetail = (props) => {
             return (
                 <div className="container">

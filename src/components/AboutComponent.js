@@ -1,6 +1,7 @@
 import React from 'react';
 import { UncontrolledCollapse, Breadcrumb, BreadcrumbItem, Card, CardBody, Button, CardHeader, Media, CardImg } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 function About(props) {
 
@@ -80,7 +81,9 @@ function About(props) {
                 </div>
                 <div className="col-12">
                     <Media list>
+                    <Stagger in>
                         {certificates}
+                    </Stagger>
                     </Media>
                 </div>
             </div>

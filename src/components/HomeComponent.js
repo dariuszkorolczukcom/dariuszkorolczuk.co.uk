@@ -2,10 +2,16 @@ import React from 'react';
 import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle} from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { FadeTransform } from 'react-animation-components';
 
     function RenderCard({item}) {
 
         return(
+            <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.2) translateY(-50%)'
+                }}>
             <Link to={item.link}>
             <Card>
                 <CardImg src={item.image} alt={item.name} />
@@ -16,6 +22,7 @@ import { Link } from 'react-router-dom';
                 </CardBody>
             </Card>
             </Link>
+            </FadeTransform>
         );
     
     }
