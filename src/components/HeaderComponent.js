@@ -44,23 +44,23 @@ class Header extends Component {
                             
                             </Nav>
                         </Collapse>
-                        
+                        <Clock className="MyClock" />
                     </div>
                     
                 </Navbar>
                 <div className="container">
                         <div className="row row-header">
-                        <Clock />
+                        
                         </div>
                     </div>
                 <Jumbotron>
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-sm-6">
-                            <img src='assets/images/basshorizontal.png' width="100%"/>
+                            <img src='/assets/images/basshorizontal.png' width="100%" alt="fretless bass guitar"/>
                             </div>
                             <div className="col-12 col-sm-6">
-                                <h4>fretless webdesign by</h4>
+                                <h4>fretless webdesign</h4>
                                 <h1>Dariusz Korolczuk</h1>
                                 <p><i>no frets attached</i></p>
                             </div>

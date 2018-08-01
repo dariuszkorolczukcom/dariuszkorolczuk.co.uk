@@ -41,7 +41,7 @@ class Main extends Component {
             parseInt(match.params.projId,10))[0]} 
           comments={this.state.comments.filter((comment) => comment.projId === 
             parseInt(match.params.projId,10))} />} />
-             ZZX/    <Route exact path='/contactme' component={() => <Contact />} />
+              <Route exact path='/contactme' component={() => <Contact />} />
               <Redirect to="/home" />
           </Switch>
              <Footer />

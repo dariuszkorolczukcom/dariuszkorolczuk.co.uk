@@ -1,10 +1,12 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle} from 'reactstrap';
+import { Link } from 'react-router-dom';
 
     function RenderCard({item}) {
 
         return(
+            <Link to={item.link}>
             <Card>
                 <CardImg src={item.image} alt={item.name} />
                 <CardBody>
@@ -13,6 +15,7 @@ import { Card, CardImg, CardText, CardBody,
                 <CardText>{item.description}</CardText>
                 </CardBody>
             </Card>
+            </Link>
         );
     
     }

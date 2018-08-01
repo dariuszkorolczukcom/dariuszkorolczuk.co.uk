@@ -130,7 +130,7 @@ class Contact extends Component {
                                                 name="agree"
                                                 checked={this.state.agree}
                                                 onChange={this.handleInputChange} /> {' '}
-                                            <strong>May we contact you?</strong>
+                                            <strong>How to contact you?</strong>
                                         </Label>
                                     </FormGroup>
                                 </Col>

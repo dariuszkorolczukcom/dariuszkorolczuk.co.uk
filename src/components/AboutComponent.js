@@ -1,18 +1,21 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardTitle, CardHeader, Media, CardImg } from 'reactstrap';
+import { UncontrolledCollapse, Breadcrumb, BreadcrumbItem, Card, CardBody, Button, CardHeader, Media, CardImg } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 function About(props) {
 
     const certificates = props.certificates.map((certificate) => {
         return (
-            <Card>
-                <CardImg src={certificate.image} alt={certificate.name} />
-                <CardBody>
-                <CardTitle>{certificate.name}</CardTitle>
-                </CardBody>
-            </Card>
-            
+               <div>
+    <Button dark color="dark" width="100%" id={`toggler${certificate.id}`} style={{ marginBottom: '1rem' }}>
+    {certificate.name}
+    </Button>
+    <UncontrolledCollapse toggler={`#toggler${certificate.id}`}>
+      <Card>
+      <CardImg src={certificate.image} alt={certificate.name} />
+      </Card>
+    </UncontrolledCollapse>
+  </div>
         );
     });
 
@@ -32,22 +35,25 @@ function About(props) {
                 <div className="col-12 col-md-6">
                     <p>A year ago I tried coding in C++ for the first time in my life and absolutely fell in love with it. More than with my bass guitar. After learning basics of PHP, and doing some courses in web design and web applications building, I started playing with JavaScript. This webpage was created with React.js. I feel confident about new features quite quickly</p>
                     <p>My plans are to keep coding, both as a job, and as a hobby.</p>
+                    <a href="/assets/files/Dariusz_Korolczuk_CV.pdf"><h4><span className="fa fa-floppy-o"></span> Download my CV</h4></a>
                     
                 </div>
                 <div className="col-12 col-md-5">
                     <Card>
-                        <CardHeader className="bg-primary text-white">Facts At a Glance</CardHeader>
+                        <CardHeader dark className="bg-dark text-white">Facts At a Glance</CardHeader>
                         <CardBody>
                             <dl className="row p-1">
-                                <dt className="col-6">DOB</dt>
+                                <dt className="col-6">Born</dt>
                                 <dd className="col-6">22 Aug 1986</dd>
                                 <dt className="col-6">Nationality</dt>
                                 <dd className="col-6">Polish</dd>
-                                <dt className="col-6">Residence</dt>
-                                <dd className="col-6">Manchester, UK</dd>
-                                <dt className="col-6">coding in</dt>
+                                <dt className="col-6">City</dt>
+                                <dd className="col-6">Manchester</dd>
+                                <dt className="col-6">Country</dt>
+                                <dd className="col-6">UK</dd>
+                                <dt className="col-6">Coding in</dt>
                                 <dd className="col-6">JS</dd>
-                                <dt className="col-6">instrument</dt>
+                                <dt className="col-6">Instrument</dt>
                                 <dd className="col-6">Bass</dd>
                             </dl>
                         </CardBody>
@@ -58,10 +64,10 @@ function About(props) {
                         <CardBody className="bg-faded">
                             <blockquote className="blockquote">
                                 <p className="mb-0">
-                                
+                                We are all now connected by the Internet, like neurons in a giant brain.
                                 </p>
                                 <footer className="blockquote-footer">
-                                Yogi Berra
+                                Stephen Hawking
                                 </footer>
                             </blockquote>
                         </CardBody>

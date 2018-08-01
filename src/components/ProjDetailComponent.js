@@ -7,11 +7,10 @@ import { Card, CardLink, CardImg, CardText, CardBody,
         if (proj != null)
             return(
                 <Card>
-                <CardImg top src={proj.image} alt={proj.name} />
+                <CardImg src={proj.image} alt={proj.name} />
                 <CardBody>
                   <CardTitle>{proj.name}</CardTitle>
                   <CardText>{proj.description}</CardText>
-                  <CardLink href={proj.link}>visit</CardLink>
                 </CardBody>
             </Card>
             );
@@ -23,7 +22,7 @@ import { Card, CardLink, CardImg, CardText, CardBody,
     function RenderComments({comments}) {
         
             return(
-                <div className="col-12 col-md-5 m-1">
+                <div>
                 <h4>Info</h4>
                 {comments.map((comment) =>
                 <div key={comment.id}>
@@ -44,7 +43,8 @@ import { Card, CardLink, CardImg, CardText, CardBody,
                         <BreadcrumbItem active>{props.proj.name}</BreadcrumbItem>
                     </Breadcrumb>
                     <div className="col-12">
-                        <h3>{props.proj.name}</h3>
+                    <CardLink href={props.proj.link}><h3>{props.proj.name}</h3></CardLink>
+                        
                         <hr />
                     </div>                
                 </div>
@@ -54,6 +54,7 @@ import { Card, CardLink, CardImg, CardText, CardBody,
                     </div>
                     <div className="col-12 col-md-5 m-1">
                         <RenderComments comments={props.comments} />
+                        <CardLink href={props.proj.link}><p>visit-></p></CardLink>
                     </div>
                 </div>
                 </div>

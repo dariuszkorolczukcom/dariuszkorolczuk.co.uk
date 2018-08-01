@@ -17,7 +17,7 @@ function Footer(props) {
                 </div>
                 <div className="col-7 col-sm-5">
                     <h5>My Address</h5>
-                    <address>
+                    <address className="whiteColor">
 		              Swinton<br />
 		              Manchester<br />
 		              United Kingdom<br />

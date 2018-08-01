@@ -1,18 +1,16 @@
 import React from 'react';
-import { Card, CardImg, CardImgOverlay,
+import { Card, CardImg,
   CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
   import { Link } from 'react-router-dom';
 
   function RenderProjectItem ({proj}) {
     return (
-        <Card>
         <Link to={`/projects/${proj.id}`} >
+        <Card>
             <CardImg width="100%" src={proj.image} alt={proj.name} />
-            <CardImgOverlay>
-                <CardTitle>{proj.name}</CardTitle>
-            </CardImgOverlay>
-        </Link>
+            <CardTitle className="cardName">{proj.name}</CardTitle> 
     </Card>
+    </Link>
     );
 }
 
