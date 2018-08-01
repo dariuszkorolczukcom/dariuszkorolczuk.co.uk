@@ -67,7 +67,7 @@ class Contact extends Component {
                 </div>
                 <div className="col-12 col-sm-6 offset-sm-1">
                     <h5>
-                        <MapWithAMarker googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places" loadingElement={<div style={{ height: `100%` }} />}containerElement={<div style={{ height: `300px` }} />}
+                        <MapWithAMarker googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcUNM7p_mXlLN4H0-zDwPWHPuuwSbRxmk&v=3.exp&libraries=geometry,drawing,places" loadingElement={<div style={{ height: `100%` }} />}containerElement={<div style={{ height: `300px` }} />}
   mapElement={<div style={{ height: `100%` }} />}
 />
 </h5>
