@@ -1,12 +1,13 @@
 import React from 'react';
 import { UncontrolledCollapse, Breadcrumb, BreadcrumbItem, Card, CardBody, Button, CardHeader, Media, CardImg } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { FadeTransform, Fade, Stagger } from 'react-animation-components';
+import { Fade, Stagger } from 'react-animation-components';
 
 function About(props) {
 
     const certificates = props.certificates.map((certificate) => {
         return (
+            <Fade in>
                <div>
     <Button dark color="dark" width="100%" id={`toggler${certificate.id}`} style={{ marginBottom: '1rem' }}>
     {certificate.name}
@@ -17,6 +18,7 @@ function About(props) {
       </Card>
     </UncontrolledCollapse>
   </div>
+  </Fade>
         );
     });
 

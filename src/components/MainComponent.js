@@ -11,8 +11,8 @@ import { MAINNEWS } from '../shared/mainnews';
 import { COMMENTS } from '../shared/comments';
 import { CERTIFICATES } from '../shared/certificates';
 import '../App.css';
-import { Switch, Route, Redirect } from 'react-router-dom';
-
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 
 
@@ -44,6 +44,8 @@ return(
         return (
             <div>
             <Header />
+				<TransitionGroup>
+				<CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
             <Switch>
               <Route path='/home' component={() => <Home mainnews={this.state.mainnews}/>} />
               <Route path='/about' component={() => <About certificates={this.state.certificates}/>} />
@@ -52,10 +54,12 @@ return(
               <Route exact path='/contact' component={() => <Contact />} />
               <Redirect to="/home" />
           </Switch> 
+          </CSSTransition>
+				</TransitionGroup>
              <Footer />
              </div>
         );
     }
 }
 
-export default Main;
+export default withRouter(Main);

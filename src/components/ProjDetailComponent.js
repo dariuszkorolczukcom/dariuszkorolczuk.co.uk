@@ -31,12 +31,14 @@ import { Card, CardLink, CardImg, CardText, CardBody,
             return(
                 <div>
                 <h4>Info</h4>
-                <Stagger in>
                 {comments.map((comment) =>
                 <div key={comment.id}>
+                <Fade in>
                 <p>{comment.comment}</p>
+                </Fade>
                 </div>
-                )}</Stagger></div>
+                
+                )}</div>
                 );}
         
         const ProjDetail = (props) => {
@@ -59,7 +61,9 @@ import { Card, CardLink, CardImg, CardText, CardBody,
                         <RenderProj proj={props.proj} />
                     </div>
                     <div className="col-12 col-md-5 m-1">
+                        <Stagger in>
                         <RenderComments comments={props.comments} />
+                        </Stagger>
                         <CardLink href={props.proj.link}><p>visit-></p></CardLink>
                     </div>
                 </div>
