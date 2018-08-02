@@ -20,44 +20,44 @@ class Main extends Component {
 
     constructor(props) {
         super(props);
-        
+
         this.state = {
-            pros:PROS,
-            mainnews:MAINNEWS,
-            comments:COMMENTS,
-            certificates:CERTIFICATES
+            pros: PROS,
+            mainnews: MAINNEWS,
+            comments: COMMENTS,
+            certificates: CERTIFICATES
         };
     }
-   
+
     render() {
-        
-		const ProjWithIt = ({match}) => {
-return(
-    <ProjDetail proj={this.state.pros.filter((proj) => 
-        proj.id === 
-    parseInt(match.params.projId,10))[0]} 
-  comments={this.state.comments.filter((comment) => 
-    comment.projId === 
-    parseInt(match.params.projId,10))} />
-);
-}
+
+        const ProjWithIt = ({ match }) => {
+            return (
+                <ProjDetail proj={this.state.pros.filter((proj) =>
+                    proj.id ===
+                    parseInt(match.params.projId, 10))[0]}
+                    comments={this.state.comments.filter((comment) =>
+                        comment.projId ===
+                        parseInt(match.params.projId, 10))} />
+            );
+        }
         return (
             <div>
-            <Header />
-				<TransitionGroup>
-				<CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
-            <Switch>
-              <Route path='/home' component={() => <Home mainnews={this.state.mainnews}/>} />
-              <Route path='/about' component={() => <About certificates={this.state.certificates}/>} />
-              <Route exact path='/projects' component={() => <Projects pros={this.state.pros} />} />
-              <Route path='/projects/:projId' component={ProjWithIt} />
-              <Route exact path='/contact' component={() => <Contact />} />
-              <Redirect to="/home" />
-          </Switch> 
-          </CSSTransition>
-				</TransitionGroup>
-             <Footer />
-             </div>
+                <Header />
+                <TransitionGroup>
+                    <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
+                        <Switch>
+                            <Route path='/home' component={() => <Home mainnews={this.state.mainnews} />} />
+                            <Route path='/about' component={() => <About certificates={this.state.certificates} />} />
+                            <Route exact path='/projects' component={() => <Projects pros={this.state.pros} />} />
+                            <Route path='/projects/:projId' component={ProjWithIt} />
+                            <Route exact path='/contact' component={() => <Contact />} />
+                            <Redirect to="/home" />
+                        </Switch>
+                    </CSSTransition>
+                </TransitionGroup>
+                <Footer />
+            </div>
         );
     }
 }

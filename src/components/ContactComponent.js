@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { Breadcrumb, BreadcrumbItem,
-            Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
+import {
+    Breadcrumb, BreadcrumbItem,
+    Button, Form, FormGroup, Label, Input, Col
+} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import MapWithAMarker from './MapComponent';
 
 class Contact extends Component {
     constructor(props) {
-    super(props);
+        super(props);
 
         this.state = {
             firstname: '',
@@ -20,16 +22,16 @@ class Contact extends Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        
+
     }
 
     handleInputChange(event) {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-    
+
         this.setState({
-          [name]: value
+            [name]: value
         });
     }
 
@@ -39,51 +41,49 @@ class Contact extends Component {
         event.preventDefault();
     }
     render() {
-    return(
-        <div className="container">
-         <div className="row">
-                <Breadcrumb>
-                    <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
-                    <BreadcrumbItem active>Contact</BreadcrumbItem>
-                </Breadcrumb>
-                <div className="col-12">
-                    <h3>Contact</h3>
-                    <hr />
-                </div>                
-            </div>
-            <div className="row row-content">
-                <div className="col-12">
-                <h3>Location Information</h3>
-                </div>
-                <div className="col-12 col-sm-4 offset-sm-1">
-                        
-                        <address>
-                        Swinton<br />
-                        Manchester<br />
-                        United Kingdom<br />
-                        <i className="fa fa-phone"></i>: +44 7508 616 909<br />
-                        <i className="fa fa-envelope"></i>: <a href="mailto:dkorolczuk86@gmail.com">dkorolczuk86@gmail.com</a>
-                        </address>
-                </div>
-                <div className="col-12 col-sm-6 offset-sm-1">
-                    <h5>
-                        <MapWithAMarker googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcUNM7p_mXlLN4H0-zDwPWHPuuwSbRxmk&v=3.exp&libraries=geometry,drawing,places" loadingElement={<div style={{ height: `100%` }} />}containerElement={<div style={{ height: `300px` }} />}
-  mapElement={<div style={{ height: `100%` }} />}
-/>
-</h5>
-                </div>
-                <div className="col-12 col-sm-11 offset-sm-1">
-                    <div className="btn-group" role="group">
-                        <a role="button" className="btn btn-primary" href="tel:+447508616909"><i className="fa fa-phone"></i> Call</a>
-                        <a role="button" className="btn btn-info"><i className="fa fa-skype"></i> Skype</a>
-                        <a role="button" className="btn btn-success" href="mailto:dkorolczuk86@gmail.com"><i className="fa fa-envelope-o"></i> Email</a>
+        return (
+            <div className="container">
+                <div className="row">
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>Contact</BreadcrumbItem>
+                    </Breadcrumb>
+                    <div className="col-12">
+                        <h3>Contact</h3>
+                        <hr />
                     </div>
                 </div>
-            </div>
-            <div className="row row-content">
-                   <div className="col-12">
-                      <h3>Send me your Feedback</h3>
-                   </div>
+                <div className="row row-content">
+                    <div className="col-12">
+                        <h3>Location Information</h3>
+                    </div>
+                    <div className="col-12 col-sm-4 offset-sm-1">
+
+                        <address>
+                            Swinton<br />
+                            Manchester<br />
+                            United Kingdom<br />
+                            <i className="fa fa-phone"></i>: +44 7508 616 909<br />
+                            <i className="fa fa-envelope"></i>: <a href="mailto:dkorolczuk86@gmail.com">dkorolczuk86@gmail.com</a>
+                        </address>
+                    </div>
+                    <div className="col-12 col-sm-6 offset-sm-1">
+                        <h5>
+                            <MapWithAMarker googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcUNM7p_mXlLN4H0-zDwPWHPuuwSbRxmk&v=3.exp&libraries=geometry,drawing,places" loadingElement={<div style={{ height: `100%` }} />} containerElement={<div style={{ height: `300px` }} />} mapElement={<div style={{ height: `100%` }} />} />
+                        </h5>
+                    </div>
+                    <div className="col-12 col-sm-11 offset-sm-1">
+                        <div className="btn-group" role="group">
+                            <a role="button" className="btn btn-primary" href="tel:+447508616909"><i className="fa fa-phone"></i> Call</a>
+                            <a role="button" className="btn btn-info"><i className="fa fa-skype"></i> Skype</a>
+                            <a role="button" className="btn btn-success" href="mailto:dkorolczuk86@gmail.com"><i className="fa fa-envelope-o"></i> Email</a>
+                        </div>
+                    </div>
+                </div>
+                <div className="row row-content">
+                    <div className="col-12">
+                        <h3>Send me your Feedback</h3>
+                    </div>
                     <div className="col-12 col-md-9">
                         <Form onSubmit={this.handleSubmit}>
                             <FormGroup row>
@@ -102,10 +102,10 @@ class Contact extends Component {
                                         placeholder="Last Name"
                                         value={this.state.lastname}
                                         onChange={this.handleInputChange} />
-                                </Col>                        
+                                </Col>
                             </FormGroup>
                             <FormGroup row>
-                            <Label htmlFor="telnum" md={2}>Contact Tel.</Label>
+                                <Label htmlFor="telnum" md={2}>Contact Tel.</Label>
                                 <Col md={10}>
                                     <Input type="tel" id="telnum" name="telnum"
                                         placeholder="Tel. number"
@@ -123,7 +123,7 @@ class Contact extends Component {
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
-                                <Col md={{size: 6, offset: 2}}>
+                                <Col md={{ size: 6, offset: 2 }}>
                                     <FormGroup check>
                                         <Label check>
                                             <Input type="checkbox"
@@ -134,10 +134,10 @@ class Contact extends Component {
                                         </Label>
                                     </FormGroup>
                                 </Col>
-                                <Col md={{size: 3, offset: 1}}>
+                                <Col md={{ size: 3, offset: 1 }}>
                                     <Input type="select" name="contactType"
-                                            value={this.state.contactType}
-                                            onChange={this.handleInputChange}>
+                                        value={this.state.contactType}
+                                        onChange={this.handleInputChange}>
                                         <option>Tel.</option>
                                         <option>Email</option>
                                     </Input>
@@ -153,7 +153,7 @@ class Contact extends Component {
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
-                                <Col md={{size: 10, offset: 2}}>
+                                <Col md={{ size: 10, offset: 2 }}>
                                     <Button type="submit" color="primary">
                                         Send Feedback
                                     </Button>
@@ -161,11 +161,11 @@ class Contact extends Component {
                             </FormGroup>
                         </Form>
                     </div>
-               </div>
-        </div>
-        
-    );
-}
+                </div>
+            </div>
+
+        );
+    }
 }
 
 export default Contact;

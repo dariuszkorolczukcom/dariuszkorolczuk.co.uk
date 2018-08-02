@@ -1,5 +1,5 @@
-export const CERTIFICATES = 
-[
+export const CERTIFICATES =
+  [
     {
       id: 0,
       name: "Introduction to HTML5",
