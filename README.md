@@ -1,4 +1,4 @@
-visit webpage (http://dariuszkorolczuk.co.uk/)
+visit webpage (http://dariuszkorolczuk.co.uk/) to see this code output.
 
 this app is build with react, so to create a build you'd need to install nodejs (https://nodejs.org/) and npm package manager (https://www.npmjs.com/).
 
@@ -12,4 +12,4 @@ to deploy the app.
 
 it's best to run it on json-server
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This project was created with [Create React App](https://github.com/facebookincubator/create-react-app).
